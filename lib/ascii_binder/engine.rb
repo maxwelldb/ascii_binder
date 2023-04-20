@@ -476,7 +476,7 @@ module AsciiBinder
 
     def process_topic_entity_list(branch_config,single_page_path,navigation,topic_entity_list,preview_path='')
       # When called from a topic group entity, create the preview dir for that group
-      Dir.mkdir(preview_path) unless preview_path == '' or File.exists?(preview_path)
+      Dir.mkdir(preview_path) unless preview_path == '' or File.exist?(preview_path)
 
       topic_entity_list.each do |topic_entity|
         # If this topic entity or any potential subentities are outside of the distro or single-page params, skip it.
@@ -489,7 +489,7 @@ module AsciiBinder
           if topic_entity.is_alias?
             configure_and_generate_alias(topic_entity,branch_config)
           else
-            if File.exists?(topic_entity.source_path)
+            if File.exist?(topic_entity.source_path)
               if single_page_path.length == 0
                 log_info("  - #{topic_entity.repo_path}")
               end

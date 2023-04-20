@@ -136,7 +136,7 @@ module AsciiBinder
     def preview_dir
       @preview_dir ||= begin
         lpreview_dir = File.join(docs_root_dir,PREVIEW_DIRNAME)
-        if not File.exists?(lpreview_dir)
+        if not File.exist?(lpreview_dir)
           Dir.mkdir(lpreview_dir)
         end
         lpreview_dir
@@ -146,7 +146,7 @@ module AsciiBinder
     def package_dir
       @package_dir ||= begin
         lpackage_dir = File.join(docs_root_dir,PACKAGE_DIRNAME)
-        if not File.exists?(lpackage_dir)
+        if not File.exist?(lpackage_dir)
           Dir.mkdir(lpackage_dir)
         end
         lpackage_dir
